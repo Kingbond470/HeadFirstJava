@@ -1,3 +1,4 @@
+/*
 Range of 2
 
 Description
@@ -28,3 +29,19 @@ Sample Output 1
 Hint
 
 In the sample test case, the value of L and R is 4 and 10 respectively. Starting from L, the values need to be doubled until R is crossed. Therefore, the output is 4 followed by 8.
+*/
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        //System.out.println("Hello World!");
+        Scanner sc = new Scanner(System.in);
+        int L = sc.nextInt();
+        int R = sc.nextInt();
+        for (int i=L; i<=R; i++) {
+            System.out.printf(i+" ");
+            i = i + i - 1;
+        }
+        
+    }
+}
