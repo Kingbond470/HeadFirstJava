@@ -1,6 +1,7 @@
 /*
 Masai Divisors
 
+
 Description
 
 You are provided 3 integers: *left*, *right* and *k*. Your task is to write a program that finds out the count of all such numbers between *left* and *right* (both inclusive) which are divided by *k*.
