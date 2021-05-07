@@ -1,3 +1,4 @@
+/*
 Square Multiple
 
 Description
@@ -36,3 +37,19 @@ Sample Output 2
 3 6 9 12
 4 8 12 16
 
+*/
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        //System.out.println("Hello World!");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i=1; i<n; i++) {
+            for (int j=1; j<n; j++) {
+                System.out.print(i*j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
