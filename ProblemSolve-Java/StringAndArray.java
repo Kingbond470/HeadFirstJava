@@ -166,6 +166,35 @@ Sample Output 1
 //program
 
 
+import java.util.Arrays;
+import java.util.Scanner;
+public class Array
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //ArrayList<Integer> ar = new ArrayList<Integer>();
+       String s=sc.nextLine();
+       String[] num =s.split(" ");
+       int [] arr=new int[num.length];
+
+       for(int i=0;i<arr.length;i++){
+           arr[i]=Integer.parseInt(num[i]);
+       }
+       //System.out.println(Arrays.toString(arr));
+        int n=arr.length+1;
+        int sumOfNum=(n*(n+1))/2;
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum=sum+arr[i];
+        }
+        int missing=sumOfNum-sum;
+        System.out.print(missing);
+
+
+    }
+}
+
+
 
 /*
 Question -4
@@ -278,8 +307,30 @@ Sample Input 1
 Sample Output 1
 
 18 9 11 34 12
+*/
+//program
 
 
+import java.util.Arrays;
+import java.util.Scanner;
+public class Array
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i=n-1; i>=0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+
+/*
  Question -6
   Equal to 42 or not!
 
@@ -311,7 +362,38 @@ Sample Input 1
 Sample Output 1
 
 No
+*/
+//program
 
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Array
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        boolean c = false;
+        for(int i=0; i<n; i++) {
+            if(arr[i] == 42) {
+                c = true;
+            }
+        }
+        if(c) {
+            System.out.println("Yes");
+        }
+        else {
+            System.out.println("No");
+        }
+    }
+}
+
+/*
 Question -7
  Sum and Conditions
 
@@ -351,7 +433,33 @@ Hint
 Sample 1 Explanation
 
 Since, sum of all elements in array is 109, therefore Greater
+*/
+//program
 
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Array
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int sum = 0;
+        for(int i=0; i<n; i++) {
+            sum = sum + arr[i];
+        }
+        
+        System.out.println((sum>100)?"Greater":"Lesser");
+    }
+}
+
+
+/*
 Question -8
  Negativity
 
@@ -383,6 +491,32 @@ Sample Input 1
 Sample Output 1
 
 2
+*/
+//program
+
+
+import java.util.Scanner;
+public class Array
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int count = 0;
+        for(int i=0; i<n; i++) {
+            if(arr[i]<0) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+/*
 
 Question -9
  Product of array problem
@@ -415,4 +549,29 @@ Sample Input 1
 Sample Output 1
 
 1080
+*/
+
+//program
+
+
+
+import java.util.Scanner;
+public class Array
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int product = 1;
+        for(int i=0; i<n; i++) {
+            product = product*arr[i];
+        }
+        System.out.println(product);
+    }
+}
+
 
