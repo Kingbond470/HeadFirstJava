@@ -1,3 +1,4 @@
+/*
 Average-of-all
 
 Description
@@ -39,8 +40,32 @@ N here is 4.
 So, you are getting 4 elements in the array.
 
 The ceil of average of elements of array is 4.
+*/
+
+//Program 
+
+
+import java.util.Scanner;
+public class String
+{
+    public static void main(java.lang.String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int n = sc.nextInt();
+        sc.nextLine();
+        
+        for(int i=0; i<n; i++) {
+            sum = sum + sc.nextInt();
+        }
+        double avg = sum/n;
+        System.out.println(Math.ceil(avg));
+
+    }
+}
+
                            
-                           
+/*                           
  Question -2
 Smallest and Largest of all
 
@@ -75,8 +100,40 @@ Sample Output 1
 
 -2
 8
+*/
+//program
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class String
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> ar = new ArrayList<Integer>();
+        int max = -1000;
+        int min = 1000;
+        int n = sc.nextInt();
+        sc.nextLine();
+        for(int i=0; i<n; i++) {
+            ar.add(sc.nextInt());
+        }
+        //System.out.println(ar);
+        for(int i=0; i<n; i++) {
+            if(ar.get(i)>max) {
+                max = ar.get(i);
+            }
+            if(ar.get(i)<min) {
+                min = ar.get(i);
+            }
+        }
+        System.out.println(min);
+        System.out.println(max);
 
 
+    }
+}
+
+/*
   Question -3
   Missing Integer
 
@@ -105,7 +162,12 @@ Sample Input 1
 Sample Output 1
 
 2
+*/
+//program
 
+
+
+/*
 Question -4
 Battle of Odd & Even
 
@@ -148,7 +210,39 @@ Odd numbers present are 1 and 3, whose sum is 4
 Even numbers present in array are 2 and 4, whose sum is 6
 
 Since 6>4, Even is the required output.
+*/
+  
+//program
 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class String
+{
+    public static void main(java.lang.String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> ar = new ArrayList<Integer>();
+        int even = 0;
+        int odd = 0;
+        int n = sc.nextInt();
+        sc.nextLine();
+        for(int i=0; i<n; i++) {
+            ar.add(sc.nextInt());
+        }
+        //System.out.println(ar);
+        for(int i=0; i<n; i++) {
+            if(ar.get(i)%2==0) {
+                even = even + ar.get(i);
+            }
+            if(ar.get(i)%2==1) {
+                odd = odd + ar.get(i);
+            }
+        }
+        System.out.println(even>odd?"Even":"Odd");
+    }
+}
+
+/*
 
 Question -5
   Reverse Array 12
