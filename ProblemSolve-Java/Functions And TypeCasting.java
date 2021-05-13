@@ -68,8 +68,44 @@ public class Main {
 
 //     Given a string remove the consonants from the string
 
+//Given a string remove the consonants from the string
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    String word=sc.nextLine();      //mausam=== m a u s a m
+    String output="";
+    int length=word.length();
+    for(int i=0; i<length; i++){
+        if(word.charAt(i)=='a' || word.charAt(i)=='e' || word.charAt(i)=='i' || word.charAt(i)=='o' || word.charAt(i)=='u' || word.charAt(i)=='A' || word.charAt(i)=='E' || word.charAt(i)=='I' || word.charAt(i)=='O' || word.charAt(i)=='U'){
+            output=output+word.charAt(i);
+        }
+    }System.out.print(output);  // \n space
+    }
+}
+
 
 //     Given a number write a function to find if it is divisible by 7
+
+//Given a string remove the consonants from the string
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    seven(n);
+    
+    }
+    public static void seven(int n) {
+        if(n%7==0) {
+            System.out.println("Divisible by 7");
+        }
+        else{
+            System.out.println("Not divisible by 7");
+        }
+    }
+}
+
 //     Given a word in upper case convert to lower case (Don't use inbuilt functions)
 //     Write a function to remove even numbers from the given array of numbers
 //     Given a string remove a given character from the string
