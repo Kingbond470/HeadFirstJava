@@ -107,7 +107,43 @@ public class Main {
 }
 
 //     Given a word in upper case convert to lower case (Don't use inbuilt functions)
+
+//Given a word in upper case convert to lower case (Don't use inbuilt functions)
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        char s = sc.next().charAt(0);
+        l_U(s);    
+    }
+    public static void l_U(char s) {
+        int n = (int)s-32;
+        char ch = (char)n;
+        System.out.println(ch);
+    }
+}
+
+
 //     Write a function to remove even numbers from the given array of numbers
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        sc.nextLine();
+        for(int i=0; i<n; i++) {
+            ar[i]=sc.nextInt();
+        }
+        for(int i=0; i<n; i++) {
+            if(ar[i]%2!=0) {
+                System.out.print(ar[i]+" ");
+            }
+        }
+    }
+}
+
 //     Given a string remove a given character from the string
 
 
