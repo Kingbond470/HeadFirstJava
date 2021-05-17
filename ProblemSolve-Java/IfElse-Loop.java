@@ -71,7 +71,7 @@ Sample Output 1
 Not Possible
 
 
-
+/*
 Question - 3
 World Cup Final
 
@@ -117,4 +117,73 @@ Sample Input 1
 Sample Output 1
 
 England
+*/
 
+
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int nz_score = sc.nextInt();
+        int nz_so = sc.nextInt();
+        int nz_4s = sc.nextInt();
+        int en_score = sc.nextInt();
+        int en_so = sc.nextInt();
+        int en_4s = sc.nextInt();
+        if(en_score>nz_score || en_score<nz_score) {
+            if(en_score>nz_score){
+                System.out.println("England Wins");
+            }
+            else {
+                System.out.println("New Zealand Wins");
+            }
+        }
+        else if(en_so<nz_so || en_so>nz_so) {
+            if(en_so<nz_so) {
+                System.out.println("New Zealand Wins");
+            }
+            else {
+                System.out.println("England Wins");
+            }
+        }
+        else {
+            if(en_4s>nz_4s) {
+                System.out.println("England Wins");
+            }
+            else {
+                System.out.println("New Zealand Wins");
+            }
+        }
+    }
+}
+
+
+
+// import java.util.Scanner;
+// public class Main{
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int[] nz = new int[3];
+//         int[] en = new int[3];
+//         for(int i=0; i<3; i++) {
+//             nz[i] = sc.nextInt();
+//         }
+//         for(int i=0; i<3; i++) {
+//             en[i] = sc.nextInt();
+//         }
+//         for(int i=0; i<3; i++) {
+//             if(nz[i]>en[i]) {
+//                 System.out.println("New Zealand Wins");
+//                 break;
+//             }
+//             if(nz[i]<en[i]) {
+//                 System.out.println("England Wins");
+//                 break;
+//             }
+//             if(i==nz.length-1) {
+//                 System.out.println("Match tie");
+//             }
+//         }
+//     }
+// }
