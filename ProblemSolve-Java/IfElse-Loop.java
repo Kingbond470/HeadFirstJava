@@ -1,3 +1,4 @@
+/*
 Tickets Booking
 
 Description
@@ -30,9 +31,27 @@ Sample Input 1
 Sample Output 1
 
 18400
+*/
+
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int f_p = sc.nextInt();
+        int s_p = sc.nextInt();
+        int t_p = sc.nextInt();
+        int f_n = sc.nextInt();
+        int s_n = sc.nextInt();
+        int t_n = sc.nextInt();
+        int total_price = f_p*f_n + s_p*s_n + t_p*t_n;
+        System.out.println(total_price);
+    }
+}
 
 
 
+/*
 Question - 2
 Pay for Phones!
 
@@ -69,6 +88,14 @@ Sample Input 1
 Sample Output 1
 
 Not Possible
+*/
+
+import java.util.Scanner;
+
+
+
+
+
 
 
 /*
