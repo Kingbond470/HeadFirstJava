@@ -91,6 +91,29 @@ Not Possible
 */
 
 import java.util.Scanner;
+public class Main{
+    public static void main{
+        Scanner sc = new Scanner(System.in);
+        int[] price = new int[4];
+        int[] quantity = new int[4];
+        int sum = 0;
+        for(int i=0; i<4; i++) {
+            price[i] = sc.nextInt();
+        }
+        for(int i=0; i<4; i++) {
+            quantity[i] = sc.nextInt();
+        }
+        for(int i=0; i<4; i++) {
+            sum = sum + price[i]*quantity[i];
+        }
+        if(sum>100000) {
+            System.out.println("Not Possible");
+        }
+        else {
+            System.out.println("Possible");
+        }
+    }
+}
 
 
 
