@@ -92,7 +92,7 @@ Not Possible
 
 import java.util.Scanner;
 public class Main{
-    public static void main{
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int[] price = new int[4];
         int[] quantity = new int[4];
