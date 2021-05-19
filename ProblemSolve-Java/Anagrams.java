@@ -43,3 +43,59 @@ public class Main {
         }
     }
 }
+
+
+/*
+Without using sort function and  arrays
+*/
+
+import java.util.*;
+public class Anagrams {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+        String s1 = "";
+        String s2 = "";
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        for(int i=0; i<a.length(); i++) {
+            if(a.charAt(i)!=' ') {
+                s1 = s1 + a.charAt(i);
+            }
+        }
+        for(int i=0; i<b.length(); i++) {
+            if(b.charAt(i)!=' ') {
+                s2 = s2 + b.charAt(i);
+            }
+        }
+        //System.out.println(s1);
+        //System.out.println(s2);
+        if(s1.length() == s2.length()) {
+            for(int i=0; i<s1.length(); i++) {
+                for(int j=0; j<s2.length(); j++) {
+                    if(s1.charAt(i) == s2.charAt(j)) {
+                        String z = "";
+                        z = z+s1.charAt(i);
+                        s2 = s2.replaceFirst(z,"");//replaceFirst only replaces the first occurence of given character while replace will remove all occurrence in single string
+                        //strnew = str.replaceFirst(String parameter, char to replace with);
+                        //System.out.print(s2 + " ");
+                    }
+                }
+            }
+            if(s2.equals("")) {
+                System.out.println("yes");
+            }
+            else {
+                System.out.println("no");
+            }
+        }
+        else {
+            System.out.println("no");
+        }
+        // String z = "";
+        // z=z+s1.charAt(0);
+        // System.out.println(s2.replaceFirst(z,""));
+
+    }
+}
