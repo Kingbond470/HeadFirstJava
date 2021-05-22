@@ -250,9 +250,9 @@ public class Student {
         String name = sc.nextLine();
         String dob = sc.nextLine();
         String blood_group = sc.nextLine();
-        Student abhi = new Student(name, dob, blood_group);
-        abhi.printDetails();
-        abhi.calculateAge(abhi.dob);
+        Student a = new Student(name, dob, blood_group);
+        a.printDetails();
+        a.calculateAge(a.dob);
 
 //        LocalDate today = LocalDate.now();//returns date i n YYYY-MM-DD format.
 //        String c_date = today.toString();
