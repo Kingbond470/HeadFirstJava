@@ -192,7 +192,71 @@ O+ve
 
 Output
 
-Student name is Ayush 
-Student  age is 25
-Student blood group is O+ve
+Name: Ayush
+Date of Birth: 19-05-1995
+Blood Group: O+ve
+
+Ayush is 26 years and 0 months old   ------> if calculateAge() method is called
 */
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class Student {
+    String name;
+    String dob;
+    String blood_group;
+    public Student(String name, String dob, String blood_group) {
+        this.name = name;
+        this.dob = dob;
+        this.blood_group = blood_group;
+    }
+    public void calculateAge(String dob) {
+        String[] date_of_birth = dob.split("[-/]");
+        int d = Integer.parseInt(date_of_birth[0]);
+        int m = Integer.parseInt(date_of_birth[1]);
+        int y = Integer.parseInt(date_of_birth[2]);
+        LocalDate today = LocalDate.now();//return the date in yyyy-mm-dd format
+        String c_date = today.toString();
+        String[] date = c_date.split("[-/]");
+        int c_d = Integer.parseInt(date[2]);
+        int c_m = Integer.parseInt(date[1]);
+        int c_y = Integer.parseInt(date[0]);
+        int t_m = 0;
+        int t_y = 0;
+        if(y<=c_y) {
+            if(m>c_m && m<=12) {
+                t_y = c_y-y-1;
+                int a = m-c_m;
+                t_m=12-a;
+            }
+            else {
+                if(m<=12) {
+                    t_y = c_y - y;
+                    t_m = c_m - m;
+                }
+
+            }
+        }
+        System.out.println(name+" is "+t_y+" years and "+t_m+" months old");
+    }
+    public void printDetails() {
+        System.out.println("Name: "+name);
+        System.out.println("Date of Birth: "+dob);
+        System.out.println("Blood Group: "+blood_group);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        String dob = sc.nextLine();
+        String blood_group = sc.nextLine();
+        Student abhi = new Student(name, dob, blood_group);
+        abhi.printDetails();
+        abhi.calculateAge(abhi.dob);
+
+//        LocalDate today = LocalDate.now();//returns date i n YYYY-MM-DD format.
+//        String c_date = today.toString();
+//        String[] date = c_date.split("[-/]");
+//        System.out.println(date[0]+" "+date[1]+" "+date[2]);
+    }
+}
