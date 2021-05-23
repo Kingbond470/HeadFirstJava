@@ -132,16 +132,74 @@ Problem
     Use this function to convert a given word to lower case
 */
 
+import java.util.Scanner;
+
+public class UpperToLower {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        System.out.println(toLowerCase(word));
+    }
+    public static String toLowerCase(String word) {
+        String output ="";
+        for(int i=0; i<word.length(); i++) {
+            output = output + toLower(word.charAt(i));
+        }
+        return output;
+    }
+    public static char toLower(char c) {
+        int a = (int)c;
+        char s1;
+        //65 to 90 -- ASCII values of A to Z
+        if(a>64 && a<91) {
+            a = (int)c + 32;
+            s1 = (char)a;
+        }
+        else {
+            s1 = c;
+        }
+        return s1;
+    }
+}
 
 
+
+/*
 6. Mirror Image
 Problem
 
     Print the mirror image of the given lowercase string ayzb should become zbay
     Note: mirror image does not mean reverse (The mirror image of a is z, b is y, c is x ...)
+*/
 
-
-
-
+import java.util.Scanner;
+public class MirrorImage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        mirror(str);
+    }
+    public static void mirror(String str) {
+        //ASCII -- 65(A) to 90(Z)  &&  97(a) to 122(z)
+        //char[] ch = str.toCharArray();
+        String strRevSmall = "zyxwvutsrqponmlkjihgfedcba";
+        String strRevCaps = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+        String result = "";
+        for(int i=0; i<str.length(); i++) {
+            char a = str.charAt(i);
+            int n = (int)a;
+            if(n>=65 && n<=90) {
+                result = result + strRevCaps.charAt(str.charAt(i) - 'A');
+            }
+            else if(n>=97 && n<=122) {
+                result = result + strRevSmall.charAt(str.charAt(i) - 'a');
+            }
+            else {
+                result = result + str.charAt(i);
+            }
+        }
+        System.out.println(result);
+    }
+}
 
 
