@@ -1,12 +1,12 @@
 /* 
 Problem -1
 
-    Create a class called ClassRoom which stores student name, age and address.
+Create a class called ClassRoom which stores student name, age and address.
 
-    Create a method printCategory with the below conditions
-        if the age is between 5 and 12 (both included) then print Primary School.
-        if the age is between 13 and 15(both included) then print High School
-    Create a method printDetails that will print Student name and address.
+Create a method printCategory with the below conditions
+if the age is between 5 and 12 (both included) then print Primary School.
+if the age is between 13 and 15(both included) then print High School
+Create a method printDetails that will print Student name and address.
 
 Now create 2 objects of ClassRoom with a parameterized constructor that accepts student name, age and address and call printCategory() and printDetails() methods.
 
