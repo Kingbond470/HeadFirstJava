@@ -1,0 +1,267 @@
+Anagram Words Submitted
+Problem-1
+
+    Given two words (small case) if they are anagrams print "TRUE" otherwise "FALSE" https://en.wikipedia.org/wiki/Anagram
+    Sample Input 1 - den , end
+    Sample Output 1 - TRUE
+    Sample Input 2 - hello, heloo
+    Sample Output 2 - FALSE
+
+Submission Image/Video Instructions
+Screenshot of the output for the words (listen, silent) , (here, heir), (wind, dwine)
+
+
+Phone Numbers Dictionary Submitted
+Problem-2
+
+Given user's names and their phone numbers , query the given user and find the phone number .
+
+Input
+
+Yogesh 915678
+Nrupul 512345
+Prateek 213456
+Aman 120987
+Madhukar 009871
+
+Output
+
+Example 1
+
+user = Aman
+
+120987
+
+Example 2
+
+user = Rahul
+
+No user found
+
+Submission Image/Video Instructions
+
+Print the output for the below inputs
+
+Input 1
+
+Ajay 21345
+RamDas 32146
+Rohith 23522
+Nihal 98743
+
+Query the user Nihal
+
+Input 2
+
+Ajay 21342
+RamDas 32146
+Rohith 23522
+Nihal 98743
+
+Query the user Mani
+
+
+Find Array pairs Pending
+Problem -3
+
+Given an array and sum value , find pair with given sum.
+
+Given sum = 10
+
+Input
+
+8 4  6  2  1  3
+
+Output
+
+(8,2)
+(4,6)
+
+Submission Image/Video Instructions
+
+Find the pairs for the given array = { 1, 3 , 5 , 2 , 7} , sum = 8
+
+
+
+Users Age Filter Pending
+Problem -4
+
+    Given a list of user data with name and age, create a list of key-value pairs from the input
+    From the generated data, print the users whose age is more than 30
+    Sample Input
+
+    Nrupul 32
+    Prateek 30
+    Aman 26
+    Albert 28
+    Yogesh 44
+
+    Sample Data Stored [] - List {} - Key-Value Pairs
+
+    [
+      {name: "Nrupul", age: 32},
+      {name: "Prateek" , age: 30},
+      {name: "Aman" , age: 26},
+      {name: "Albert" , age: 28},
+      {name: "Yogesh" , age: 44},
+    ]
+
+    Sample Output
+
+    Nrupul
+    Yogesh
+
+Submission Image/Video Instructions
+Screenshot of the output for the input
+
+Nrupul 32
+Prateek 30
+Aman 26
+Ankur 34
+Albert 28
+Yogesh 44
+Sidharth 22
+
+
+User Skill Finder Pending
+Problem-5
+
+    Given a list of user data with name and skill, create key-value pairs from the input as mentioned below
+    From the generated data, print the users who have the desired skill
+    Sample Input
+
+    Nrupul cmd
+    Prateek js
+    Aman ds
+    Nrupul python
+    Albert js
+    Albert react
+    Aman algo
+    Prateek html
+    Nrupul sql
+
+    Sample Data Stored [] - List {} - Key-Value Pairs
+
+    {
+      Nrupul : ["cmd", "python", "sql"],
+      Prateek: ["js", "html"],
+      Aman: ["ds", "algo"],
+      Albert: ["js", "react"]
+    }
+
+    Sample Output for skill js
+
+    Prateek
+    Albert
+
+Submission Image/Video Instructions
+Screenshot of the output for the skill - ds and the below mentioned input
+
+Nrupul cmd
+Prateek js
+Aman ds
+Nrupul python
+Albert js
+Albert react
+Aman algo
+Prateek html
+Nrupul sql
+
+
+Problem -6
+ Given an array of string , print the occurrence of each and every character.
+
+Sample Input
+
+String[] names = {"Masai","School"};
+
+Sample Output
+
+M - 1
+a - 2
+s-1
+i -1
+S - 1
+c - 1
+h - 1
+o - 2
+l - 1
+
+
+Problem -7
+    Create a list of any five tourist places and store it inside an ArrayList. Print the tourist places whose length is >5.
+
+Sample Input
+
+Wayanad
+Ooty
+Pondichery
+Goa
+Munnar
+
+Sample Output
+
+Wayanad
+Pondichery
+Munnar
+
+
+Problem -8
+
+    Given an array of int , find unique elements
+
+Sample Input
+
+[10,20,30,20,10,40]
+
+Sample Output
+
+30
+40
+
+
+Problem -9
+
+    Given the below array of String, remove repeated words
+
+Sample Input
+
+["Masai","School","is","Awesome","but","Masai","is","intense"]
+
+Sample Output
+
+Masai
+School
+is 
+Awesome
+but
+intense
+
+
+Probelm  -10
+
+    Around 50 people are playing Housie Housie in a function. There are prizes if anyone will complete the fastest five numbers in top row, middle row, bottom row. Your task is to use the right collection data structure and generate the data in the below format.
+
+    {
+    "top_row" : {"ram","ayush","nrupul"},
+    "bottom_row": {"floyd","leo"},
+    "middle_row":{"sita","laxman","jaydev","surya"}
+    }
+
+    The above data represents the name of the winners. Your task is to calculate the winner in the top_row whose name size is greater than 4. Assume that the data is static . (keyboard input is not necessary)
+
+Sample Output
+
+ayush
+nrupul
+
+
+Problem -11
+
+
+    Create a class Scores which has the below details
+        there is one member variable scores which stores an array of int
+        create a method called findScore(int index, int[] scores)  which will print the score based on the index passed
+            if the index is found in the array then print the score at that index
+            if the index is not found then handle the exception and print a message saying Array index out of Bounds
+
