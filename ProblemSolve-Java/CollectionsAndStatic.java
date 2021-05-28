@@ -68,8 +68,9 @@ public class Anagram {
     }
 }
 
+
+
 /*
-Phone Numbers Dictionary Submitted
 Problem-2
 
 Given user's names and their phone numbers , query the given user and find the phone number .
@@ -118,6 +119,7 @@ Nihal 98743
 
 Query the user Mani
 */
+
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -166,8 +168,9 @@ public class PhoneNumberDictionary {
 
 
 /*
-Find Array pairs Pending
+
 Problem -3
+Find Array pairs
 
 Given an array and sum value , find pair with given sum.
 
@@ -213,8 +216,10 @@ public class findPairs {
 
 
 /*
-Users Age Filter Pending
+
 Problem -4
+Users Age Filter
+
 
     Given a list of user data with name and age, create a list of key-value pairs from the input
     From the generated data, print the users whose age is more than 30
@@ -250,6 +255,7 @@ Albert 28
 Yogesh 44
 Sidharth 22
 */
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -288,8 +294,10 @@ public class AgeFilter {
 
 
 /*
-User Skill Finder Pending
+
 Problem-5
+User Skill Finder
+
 
     Given a list of user data with name and skill, create key-value pairs from the input as mentioned below
     From the generated data, print the users who have the desired skill
@@ -331,7 +339,60 @@ Prateek html
 Nrupul sql
 */
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
+public class SkillFinder3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String, ArrayList<String>> hashmap = new HashMap<String, ArrayList<String>>();
+        String Nrupul = "Nrupul";
+        ArrayList<String> nrupul = new ArrayList<String>();
+        nrupul.add("cmd");
+        nrupul.add("python");
+        nrupul.add("sql");
+        String Prateek = "Prateek";
+        ArrayList<String> prateek = new ArrayList<String>();
+        prateek.add("js");
+        prateek.add("html");
+        String Aman = "Amana";
+        ArrayList<String> aman = new ArrayList<String>();
+        aman.add("ds");
+        aman.add("algo");
+        String Albert = "Albert";
+        ArrayList<String> albert = new ArrayList<String>();
+        albert.add("js");
+        albert.add("react");
+        hashmap.put(Nrupul,nrupul);
+        hashmap.put(Prateek,prateek);
+        hashmap.put(Aman,aman);
+        hashmap.put(Albert,albert);
+
+        System.out.println("Enter the skill you want");
+        String desiredSkill = sc.next();
+        for(Map.Entry<String,ArrayList<String>> map:hashmap.entrySet()) {
+            if(map.getValue().contains(desiredSkill)) {
+                System.out.println(map.getKey());
+            }
+        }
+    }
+}
+/*
+Nrupul cmd
+Prateek js
+Aman ds
+Nrupul python
+Albert js
+Albert react
+Aman algo
+Prateek html
+Nrupul sql
+ */
+
+
+/*
 Problem -6
  Given an array of string , print the occurrence of each and every character.
 
@@ -343,15 +404,42 @@ Sample Output
 
 M - 1
 a - 2
-s-1
-i -1
+s - 1
+i - 1
 S - 1
 c - 1
 h - 1
 o - 2
 l - 1
+*/
+
+public class OccurenceOfChars {
+    public static void main(String[] args) {
+        //Scanner sc = new Scanner(System.in);
+        String[] names = {"Masai","School"};
+        for(int i=0; i<names.length; i++) {
+            String str = names[i];
+            for(int j=0; j<str.length(); j++) {
+                int count = 0;
+                for(int k=0; k<str.length(); k++) {
+                    if(str.charAt(j) == str.charAt(k)) {
+                        count++;
+                    }
+                }
+                System.out.println(str.charAt(j)+" - "+count);
+                str = str.replaceAll(Character.toString(str.charAt(j)),"");//for converting character to string
+                //System.out.println(str);
+                j--;
+            }
+        }
+    }
+}
 
 
+
+
+
+/*
 Problem -7
     Create a list of any five tourist places and store it inside an ArrayList. Print the tourist places whose length is >5.
 
@@ -368,8 +456,38 @@ Sample Output
 Wayanad
 Pondichery
 Munnar
+*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class touristPlaces {
+    public static void main(String[] args) {
+        ArrayList<String> tourist_places = new ArrayList<String>();
+
+        tourist_places.add("Wayanad");
+        tourist_places.add("Ooty");
+        tourist_places.add("Pondichery");
+        tourist_places.add("Goa");
+        tourist_places.add("Munnar");
+        /*
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0; i<n; i++) {
+            tourist_places.add(sc.next());
+        }
+         */
+        for(int i=0; i<tourist_places.size(); i++) {
+            if(tourist_places.get(i).length()>5) {
+                System.out.println(tourist_places.get(i));
+            }
+        }
+    }
+}
 
 
+
+/*
 Problem -8
 
     Given an array of int , find unique elements
@@ -382,8 +500,38 @@ Sample Output
 
 30
 40
+*/
+
+import java.util.Scanner;
+
+public class UniqueElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[]ar = new int[n];   //[10,20,30,20,10,40]
+        //int[] ar = {10,20,30,20,10,40};
+        for(int i=0; i<n; i++) {
+            ar[i] = sc.nextInt();
+        }
+
+        for(int i=0; i<ar.length; i++) {
+            int count = 0;
+            for(int j=0; j<ar.length; j++) {
+                if(ar[i] == ar[j] && i!=j) {
+                    count++;
+                }
+            }
+            if(count==0) {
+                System.out.println(ar[i]);
+            }
+
+        }
+    }
+}
 
 
+
+/*
 Problem -9
 
     Given the below array of String, remove repeated words
@@ -400,6 +548,38 @@ is
 Awesome
 but
 intense
+*/
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class removeRepeatedWords {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //int n = sc.nextInt();
+        //remove the repeated words and print it
+        String[] str = {"Masai","School","is","Awesome","but","Masai","is","intense"};
+//        LinkedList<String> str = new LinkedList<String>();
+//        for(int i=0; i<n; i++) {
+//            str.add(sc.next());
+//        }
+
+        for(int i=0; i<str.length; i++) {
+            int count = 0;
+            for(int j=0; j<str.length; j++) {
+                if(str[i].equals(str[j])) {
+                    count++;
+                }
+                if(count==1 && i==j) {
+                    System.out.println(str[i]);
+                }
+            }
+
+
+        }
+    }
+}
+
 
 
 Probelm  -10
