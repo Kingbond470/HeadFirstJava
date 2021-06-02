@@ -121,6 +121,43 @@ Hint
 Sample 1 Explanation
 */
 
+package StringAndArray;
+
+import java.util.Scanner;
+public class PalindromicSubstring {
+    public static boolean isPalindrome(String string) {
+        String reverse_string = "";
+        boolean b = false;
+        for(int i=string.length()-1; i>=0; i--) {
+            reverse_string = reverse_string + string.charAt(i);
+        }
+        if(string.equals(reverse_string)) {
+            b = true;
+        }
+        return b;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int count = 0;
+        int max_count = 0;
+        for (int i = 0; i<str.length(); i++) {
+            for(int j=i; j<str.length(); j++) {
+                if(str.charAt(i) == str.charAt(j)) {
+                    String temp_string = str.substring(i,j+1);
+                    //System.out.println(temp_string);
+                    if(isPalindrome(temp_string)) {
+                        count = temp_string.length();
+                        if(count>max_count) {
+                            max_count = count;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(max_count);
+    }
+}
 
 
 
