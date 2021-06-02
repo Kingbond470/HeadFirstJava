@@ -1,3 +1,4 @@
+/*
 Problem-1
 World Test Championship
 
@@ -48,8 +49,38 @@ Hint
 In the first sample test case, the points of India are 580 and that of Australia are 500, therefore the output is India.
 
 In the second test case, the points of Australia & India are same, and both the teams have played the same number of games, therefore, the output is "Play another game!".
+*/
 
+import java.util.Scanner;
 
+public class WorldTestChampionship {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int ind_sc = sc.nextInt();
+        int aus_sc = sc.nextInt();
+        int ind_matches = sc.nextInt();
+        int aus_matches = sc.nextInt();
+        if(ind_sc>aus_sc) {
+            System.out.println("India");
+        }
+        else if(ind_sc<aus_sc) {
+            System.out.println("Australia");
+        }
+        else {
+            if(ind_matches>aus_matches) {
+                System.out.println("India");
+            }
+            else if(ind_matches<aus_matches) {
+                System.out.println("Australia");
+            }
+            else {
+                System.out.println("Play Another Match!");
+            }
+        }
+    }
+}
+
+/*
 Problem-2
 Feel Good Strings
 
@@ -95,8 +126,31 @@ Hint
 In the first sample test case, the number of vowels in the string are 4, which is more than N/2 i.e. 2, therefore the output is "Feel good!".
 
 In the second sample test case, the number of vowels in the string are 1, which is less than N/2 i.e 2, therefore the output is "Feel bad!".
+*/
+import java.util.Scanner;
 
+public class FeelGoodStrings {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+        String str = sc.nextLine();
+        int count = 0;
+        for(int i=0; i<str.length(); i++) {
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {
+                count++;
+            }
+        }
+        if(count>=n/2) {
+            System.out.println("Feel Good!");
+        }
+        else {
+            System.out.println("Fees Bad!");
+        }
+    }
+}
 
+/*
 Problem-3
 Beach Fun
 
@@ -138,8 +192,23 @@ Hint
 In the first sample test case, the position X is 23, therefore the distance from RK Beach is 23 - 1 = 22, and the distance from RU Beach is 49 - 23 = 26. Therefore, the beach closer to you is RK Beach.
 
 In the second sample test case, the position X is 29, therefore the distance from RK Beach is 29 - 1 = 28, and the distance from RU Beach is 49 - 29 = 20. Therefore, the beach closer to you is RU Beach.
+*/
+
+import java.util.Scanner;
+
+public class BeachFun {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int X = sc.nextInt();
+        int RK_Beach = 1;
+        int RU_Beach = 49;
+        int mid = (RK_Beach+RU_Beach)/2;
+        System.out.println(X>mid ? "RU Beach" : X<mid ? "RK Beach" : "Go Anywhere!");
+    }
+}
 
 
+/*
 Problem -4
 Birthday Chocolates Shopping
 
@@ -187,8 +256,25 @@ Hint
 In the first sample test cases, you can buy 15 Dairy Milk chocolates, in 75 rupees, and you have 100 rupees to spend, so the answer will be "Dairy Milk".
 
 In the second test case, you cannot buy any of the chocolates in the required quantity of 15, so the output is "No Chocolates"
+*/
+
+import java.util.Scanner;
+
+public class BirthdayChocolateShopping {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();//Money
+        int M = sc.nextInt();//Students
+        int dairymilk = 5;
+        int shots = 2;
+        int eclairs = 1;
+        //System.out.println(N/dairymilk>=M ? "Dairy Milk" : N/shots>=M ? "Shots" : N/eclairs>=M ? "Eclairs" : "No Chocolates");
+        System.out.println(M*dairymilk<=N ? "Dairy Milk" : M*shots<=N ? "Shots" : M*eclairs<=N ? "Eclairs" : "No Chocolates");
+    }
+}
 
 
+/*
 Problem -5
 Social Networking for Everyone
 
@@ -232,8 +318,20 @@ Hint
 In the first sample test case, the age of the person is 15, therefore, the output  is "5 Kms".
 
 In the sample test case, the age of the person is 30, therefore, the output is "You can have friends from anywhere".
+*/
+
+import java.util.Scanner;
+
+public class SocialNetworkingForEveryone {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(n<13?"1 kms":n>=13&&n<18?"5 kms":n>=18&&n<30?"10 kms":"you can have friends from anywhere");
+    }
+}
 
 
+/*
 problem -6
 
 New Year Resolution 2021
@@ -291,8 +389,22 @@ Hint
 In the first sample test case, the perimeter of the first park is 5*4 = 20, therefore, Park A can be selected to walk 15 meters. Therefore, the output is "Park A".
 
 In the second sample test case, the perimeter of all the parks is 4, therefore no park can be selected to walk 10 meters. Therefore, the output is "Resolution Failed".
+*/
 
+import java.util.Scanner;
 
+public class NewYearResolution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int parkA = sc.nextInt();
+        int parkB = sc.nextInt();
+        int parkC = sc.nextInt();
+        int d = sc.nextInt();
+        System.out.println(parkA*4>=d ? "Park A" : parkB*4>=d ? "Park B" : parkC*4>=d ? "Park C" : "Resolution Failed");
+    }
+}
+
+/*
 Problem -7
 
 Find the Thief
@@ -340,8 +452,23 @@ Hint
 In the first sample test case, the account balance of Person C is greater than N i.e. 31000, therefore, the output is "Person C".
 
 In the second sample test case, none of the individuals have an account statement greater than N i.e. 5000, therefore, the output is "Not found".
+*/
+
+import java.util.Scanner;
+
+public class FindtheThief {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println(a>n ? "Person A" : b>n ? "Person B" : c>n ? "Person C" : "Not Found");
+    }
+}
 
 
+/*
 Problem-8
 Greater than smallest element
 
@@ -391,8 +518,53 @@ For test case 1.
 Minimum element is 1.
 
 All elements more than 1 are converted to -1.
+*/
+
+import java.util.Scanner;
+public class GreaterthanSmallestelement {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        sc.nextLine();
+        for(int i=0; i<T; i++) {
+            //System.out.println("\n"+i+" start");
+            int n = sc.nextInt();
+            sc.nextLine();
+            //System.out.println(n+"n is taken");
+            int[] ar = new int[n];
+            //System.out.println("array formed");
+            for(int j=0; j<n; j++) {
+
+                ar[j] = sc.nextInt();
+                //System.out.print(ar[j]+" entered the loop    ");//press enter to print next output
+            }
+            //System.out.println("\n1st loop completed");
+            int min = ar[0];
+            for(int j=0; j<n; j++) {
+                if(ar[j]<min) {
+                    min = ar[j];
+                }
+            }
+            //System.out.println("2nd loop completed");
+            for(int j=0; j<n; j++) {
+                if(min<ar[j]) {
+                    ar[j] = -1;
+                }
+            }
+            //System.out.println("3rd loop completed");
+            for(int j=0; j<n; j++) {
+                System.out.print(ar[j]+" ");
+            }
+            System.out.println();
+            //System.out.println("4th loop completed");
+           // System.out.println("\nend--------------------------");
+        }
+    }
+}
 
 
+
+/*
 Problem -9
 Smaller than largest element
 
@@ -442,7 +614,50 @@ For test case 1.
 Maximum element is 3.
 
 All elements less than 3 are converted to -1.
+*/
 
+import java.util.Scanner;
+
+public class SmallerthanLargestelement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        sc.nextLine();
+        for(int i=0; i<T; i++) {
+            int n = sc.nextInt();
+            sc.nextLine();
+            int[] ar = new int[n];
+            for(int j=0; j<n; j++) {
+
+                ar[j] = sc.nextInt();
+                //System.out.print(ar[j]+" entered the loop    ");//press enter to print next output
+            }
+            //System.out.println("\n1st loop completed");
+            int max = ar[0];
+            for(int j=0; j<n; j++) {
+                if(ar[j]>max) {
+                    max = ar[j];
+                }
+            }
+            //System.out.println("2nd loop completed");
+            for(int j=0; j<n; j++) {
+                if(max>ar[j]) {
+                    ar[j] = -1;
+                }
+            }
+            //System.out.println("3rd loop completed");
+            for(int j=0; j<n; j++) {
+                System.out.print(ar[j]+" ");
+            }
+            System.out.println();
+            //System.out.println("4th loop completed");
+           // System.out.println("\nend--------------------------");
+        }
+    }
+}
+
+
+/*
 
 Problem-10
 Smallest Element
@@ -493,8 +708,51 @@ For test case 1:-
 1 is smallest element.
 
 Change all occurrences of 1 to -1.
+*/
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+public class SmallestElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i=0; i<t; i++) {
+            int n = sc.nextInt();
+            int[] ar = new int[n];
+            int min = 1000;
+            for(int j=0; j<n; j++) {
+                ar[j] = sc.nextInt();
+                if(min>ar[j]){
+                    min = ar[j];
+                }
+            }
+//            int min = ar[0];
+//            for(int j=0; j<n; j++) {
+//                if(min>ar[j]) {
+//                    min = ar[j];
+//                }
+//            }
+            //System.out.println(min);
+            for(int j=0; j<n; j++) {
+                //System.out.print(ar[j]+" before ");
+                if(ar[j] == min) {
+                    ar[j] = -1;
+                }
+                System.out.print(ar[j]+" ");
+            }
+//            for(int j=0; j<n; j++) {
+//                System.out.print(ar[j]);
+//            }
+            System.out.println();
+
+        }
+    }
+}
+
+
+/*
 Problem-11
 Largest Element
 
@@ -542,8 +800,38 @@ Hint
 For test case 1, maximum element is 3.
 
 Change all occurrences of maximum element to -1.
+*/
+
+import java.util.Scanner;
+
+public class LargestElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i=0; i<t; i++) {
+            int n = sc.nextInt();
+            int[] ar = new int[n];
+            int max = -10;
+            for(int j=0; j<n; j++) {
+                ar[j] = sc.nextInt();
+                if(max<ar[j]) {
+                    max = ar[j];
+                }
+            }
+            for(int j=0; j<n; j++) {
+                if(ar[j] == max) {
+                    ar[j] = -1;
+                }
+                System.out.print(ar[j]+" ");
+            }
+            //System.out.println();
+        }
+    }
+}
 
 
+
+/*
 Problem-12
 
 Odds and Evens
@@ -596,9 +884,34 @@ For test case 1:
 3 is changed to -1
 
 2 is changed to 1.
+*/
+
+import java.util.Scanner;
+
+public class OddsandEvens {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i=0; i<t; i++) {
+            int n = sc.nextInt();
+            int[] ar = new int[n];
+            for(int j=0; j<n; j++) {
+                ar[j] = sc.nextInt();
+                if(ar[j]%2==0) {
+                    ar[j] = 1;
+                }
+                else {
+                    ar[j] = -1;
+                }
+                System.out.print(ar[j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
 
 
-
+/*
 Problem-13
 Numbers divisible by M
 
@@ -650,8 +963,32 @@ For test case 1:
 3 is divisible by 3, so changes to -1.
 
 2 is not divisible by 3, so remains same.
+*/
+
+import java.util.Scanner;
+public class NumberDivisiblebyM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i=0; i<t; i++) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int[] ar = new int[n];
+            for(int j=0; j<n; j++) {
+                ar[j] = sc.nextInt();
+                if(ar[j]%m==0) {
+                    ar[j] = -1;
+                }
+                System.out.print(ar[j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
 
 
+
+/*
 Problem-14
 
 Numbers not divisible by M
@@ -704,9 +1041,32 @@ For test case 1:
 3 is divisible by 3, so remains same.
 
 2 is not divisible by 3, so changes to -1.
+*/
 
 
+import java.util.Scanner;
+public class NumberNotDivisiblebyM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int i=0; i<t; i++) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            int[] ar = new int[n];
+            for(int j=0; j<n; j++) {
+                ar[j] = sc.nextInt();
+                if(ar[j]%m!=0) {
+                    ar[j] = -1;
+                }
+                System.out.print(ar[j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
 
+
+/*
 Problem-15
 Decode the message
 
@@ -741,8 +1101,33 @@ Hint
 Sample Input 1 Explanation
 
 In the given string , substring GGG of length 3 is the longest.
+*/
+
+import java.util.Scanner;
+public class DecodetheMessage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int max = 0;
+        int count = 1;
+        for(int i=1; i<str.length(); i++) {
+            if(str.charAt(i-1) == (str.charAt(i))) {
+                count++;
+                if(count>max) {
+                    max = count;
+                }
+            }
+            else {
+                count = 1;
+            }
+        }
+        System.out.println(max);
+    }
+}
 
 
+
+/*
 Problem-16
 Longest Repeated Odd
 
@@ -788,8 +1173,34 @@ Sample 1 Explanation
 1 is repeated 3 times from index 9 to index 11 => 3 times
 
 So, the output is 4 since 1 is odd.
+*/
+
+import java.util.Scanner;
+public class LongestRepeatedOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        int count = 0;
+        int max = 0;
+        for(int i=0; i<n; i++) {
+            ar[i] = sc.nextInt();
+            if(ar[i]%2==1) {
+                count++;
+                if(count>max) {
+                    max = count;
+                }
+            }
+            else {
+                count = 1;
+            }
+        }
+        System.out.println(max);
+    }
+}
 
 
+/*
 Problem -17
 V
 
@@ -828,9 +1239,13 @@ Sample Output 2
 Hint
 
 Self Explanatory
+*/
 
 
 
+
+
+/*
 Problem-18
 Pattern of W
 
@@ -869,8 +1284,11 @@ Sample Output 2
 Hint
 
 Self Explanatory
+*/
 
 
+
+/*
 Problem-19
 Prayers
 
@@ -909,8 +1327,12 @@ Sample Output 2
 Hint
 
 No of lines in output would be N.
+*/
 
 
+
+
+/*
 Problem-20
 Strange Pattern
 
@@ -951,3 +1373,5 @@ Sample Output 2
 Hint
 
 For N, there would be 2*N lined pattern.
+*/
+
