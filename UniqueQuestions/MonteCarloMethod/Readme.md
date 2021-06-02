@@ -3,5 +3,8 @@ algorithms that rely on repeated random sampling to obtain numerical results. Th
 underlying concept is to use randomness to solve problems that might be deterministic in
 principle.</p>
 
-<!--<img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Pi_30K.gif/220px-Pi_30K.gif" alt="Monte Carlo Experiment"  width="250" />-->
-<img src="https://images.squarespace-cdn.com/content/v1/54e50c15e4b058fc6806d068/1425423073377-E2QATXP5SYN4RUZJ82D2/ke17ZwdGBToddI8pDm48kGBZtRQfXGGrtPZLnhyM-_cUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcA1-gozCHF5oWLhYuIYbL1C4vSilN19bk6xGblzmdbSdFta8F3ToaOXYsltDIh3IZ/image-asset.png" alt="Monte Carlo Experiment" />
+<hr>
+<h3>Monte Carlo Approximation of Pi = 3.14616</h3>
+<img src="https://thatsmaths.files.wordpress.com/2020/05/monte-carlo-wide-4panel-1.jpg" />
+<!--<img align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Pi_30K.gif/220px-Pi_30K.gif" alt="Monte Carlo Experiment"  width="250" />
+<img src="https://images.squarespace-cdn.com/content/v1/54e50c15e4b058fc6806d068/1425423073377-E2QATXP5SYN4RUZJ82D2/ke17ZwdGBToddI8pDm48kGBZtRQfXGGrtPZLnhyM-_cUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcA1-gozCHF5oWLhYuIYbL1C4vSilN19bk6xGblzmdbSdFta8F3ToaOXYsltDIh3IZ/image-asset.png" alt="Monte Carlo Experiment" />-->
