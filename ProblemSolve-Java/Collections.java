@@ -153,7 +153,7 @@ public class arraySortExceptZeroes {
         int n = ar.length;
         int[] new_ar = new int[n];
         for(int i=0,j=0; i<n; i++) {
-            if(ar[i]!=0) {
+            if(ar[i]!=0) {                     //since every element of array is initialized at 0
                 new_ar[j++] = ar[i];
             }
         }
