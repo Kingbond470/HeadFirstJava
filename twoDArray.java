@@ -345,6 +345,4 @@ public class SpecificDiagonals {
         }
         System.out.println();
     }
-
-
 }
