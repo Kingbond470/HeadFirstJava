@@ -1,3 +1,4 @@
+/*
 Traverse a 2D Array
 
 Description
@@ -34,10 +35,37 @@ Sample Input 1
 
 Sample Output 1
 
+
 4 3 2 1 5 6 7 8 12 11 10 9
+*/
+
+import java.util.Scanner;
+
+public class TraversalofMatrix_1 {
+    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int m = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[][] ar = new int[m][n];
+//        for(int i=0; i<m; i++) {
+//            for(int j=0; j<n; j++) {
+//                ar[i][j] = sc.nextInt();
+//            }
+//        }
+        int[][] ar = {{1,8,9},
+                    {2,7,10},
+                    {3,6,11},
+                    {4,5,12}};
+        for(int i=0; i<ar[0].length; i++) {
+            for(int j=ar.length-1; j>=0; j--) {
+                System.out.print(ar[j][i]+" ");
+            }
+        }
+    }
+}
 
 
-  
+/*  
   Problem -2
   Traverse a 2d array - 3
 
@@ -76,9 +104,34 @@ Sample Input 1
 Sample Output 1
 
 9 10 11 12 8 7 6 5 1 2 3 4
+*/
+
+import java.util.Scanner;
+public class TraversalofMatrix_2 {
+    public static void main(String[] aargs) {
+//        Scanner sc = new Scanner(System.in);
+//        int m = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[][] ar = new int[m][n];
+//        for(int i=0; i<m; i++) {
+//            for(int j=0; j<n; j++) {
+//                ar[i][j] = sc.nextInt();
+//            }
+//        }
+        int[][] ar = {{1,8,9},
+                    {2,7,10},
+                    {3,6,11},
+                    {4,5,12}};
+        for(int i=ar[0].length-1; i>=0; i--) {
+            for(int j=0; j<ar.length; j++) {
+                System.out.print(ar[j][i]+" ");
+            }
+        }
+    }
+}
 
 
-  
+/*  
   Problem -3
   Go in Zig-Zag
 
@@ -118,9 +171,38 @@ Sample Input 1
 Sample Output 1
 
 7 1 1 7 4 8 9 9 6 1 1 5 9 4 6 7 7 4 7 7 5 5 2 6 8
+*/
 
 
-  
+import java.util.Scanner;
+public class Zig_Zag {
+    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int m = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[][] ar = new int[m][n];
+//        for(int i=0; i<m; i++) {
+//            for(int j=0; j<n; j++) {
+//                ar[i][j] = sc.nextInt();
+//            }
+//        }
+        int[][] ar = {{4,7,1,1,7},{8,9,9,6,1},{6,4,9,5,1},{7,7,4,7,7},{8,6,2,5,5}};
+        for(int i=0; i<ar.length; i++) {
+            if(i%2==0) {
+                for(int j=ar[i].length-1; j>=0; j--) {
+                    System.out.print(ar[i][j]+" ");
+                }
+            } else {
+                for(int j=0; j<ar[i].length; j++) {
+                    System.out.print(ar[i][j]+" ");
+                }
+            }
+        }
+    }
+}
+
+
+/*  
 Problem -4
 Specific Diagonals
 
@@ -182,3 +264,87 @@ we need to print the diagonals of 6, also we are printing diagonals from top to 
 2 6 -> left to right diagonal and from top to bottom order
 
 6 8 -> right to left diagonal and from top to bottom order
+*/
+
+
+import java.util.Scanner;
+public class SpecificDiagonals {
+    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int m = sc.nextInt();
+//        int n = sc.nextInt();
+//        int[][] ar = new int[m][n];
+//        for(int i=0; i<m; i++) {
+//            for(int j=0; j<n; j++) {
+//                ar[i][j] = sc.nextInt();
+//            }
+//        }
+        int[][] ar = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        /*
+        1  2  3  4
+        5  6  7  8
+        9  10 11 12
+        13 14 15 16
+
+        crosspoint is 11
+        so the diagonals crossing 11 are
+        Left To Right --> 1 6 11 16
+        Right To Left --> 8 11 14
+         */
+        int crossPoint = 11;
+        int index_i = 0, index_j = 0;
+        boolean b = false;
+        for (int i = 0; i < ar.length; i++) {
+            for (int j = 0; j < ar.length; j++) {
+                if (crossPoint == ar[i][j]) {
+                    index_i = i; index_j = j;
+                    b = true;
+                }
+
+            }
+        }
+
+        if (b) {
+            //printDiagonals(ar, index_i, index_j);
+            LeftToRightdiag(ar,index_i,index_j);
+            RightToLeftdiag(ar,index_i,index_j);
+        } else {
+            System.out.println("Element not found in the array");
+        }
+    }
+    //    public static void printDiagonals(int[][] ar, int index_i, int index_j) {
+//        LeftToRightdiag(ar,index_i,index_j);
+//        RightToLeftdiag(ar,index_i,index_j);
+//    }
+    public static void RightToLeftdiag(int[][] ar, int index_i, int index_j) {
+        int sum = index_i + index_j;
+        for(int i=0; i<ar.length; i++) {
+            for(int j=0; j<ar[i].length; j++) {
+                if(i+j == sum) {
+                    System.out.print(ar[i][j]+" ");
+                }
+            }
+        }
+        System.out.println();
+    }
+    public static void LeftToRightdiag(int[][] ar, int index_i, int index_j) {
+        if(index_i >= index_j) {
+            index_i = index_i - index_j;
+            index_j = 0;
+        } else if (index_j > index_i) {
+            index_j = index_j - index_i;
+            index_i =0;
+        }
+        for(int i=0; i<ar.length; i++) {
+            for(int j=0; j<ar[i].length; j++) {
+                if(i==index_i && j==index_j) {
+                    System.out.print(ar[index_i++][index_j++]+" ");
+                    //index_i++; index_j++;
+                }
+            }
+        }
+        System.out.println();
+    }
+
+
+}
