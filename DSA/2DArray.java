@@ -311,3 +311,153 @@ public class Rotateby90 {
     }
 }
 
+
+
+
+Problem -4
+ Rotate by 90 Clockwise
+
+Description
+
+Given a square matrix of size N x N. Rotate the matrix by 90 degrees in clockwise direction. Refer the sample I/O for better understanding.
+
+Input
+
+The first line of the input contains T, the number of test cases.
+
+The next line contains N, the size of the square matrix.
+
+The next line N line contains N space separated integers, denoting the elements of the matrix.
+
+Constraints
+
+1 <= T <= 10
+
+1 <= N <= 50
+
+1 <= A[i][j] <= 100
+
+Output
+
+For each matrix, given in the test case, rotate the matrix by 90 degrees in clockwise direction.
+
+Sample Input 1
+
+2
+4
+1 2 3 4
+5 6 7 8
+1 2 3 4
+5 6 7 8
+3
+1 2 3
+4 5 6
+7 8 9
+
+Sample Output 1
+
+5 1 5 1 
+6 2 6 2 
+7 3 7 3 
+8 4 8 4 
+7 4 1 
+8 5 2 
+9 6 3 
+
+Hint
+
+In the given sample test case, in the first sample test case the value of N = 4, and the array after rotating 90 degrees clockwise, becomes as shown in the output. Similarly, for the second test case N = 3, and the matrix after rotation becomes
+
+7 4 1
+8 5 2
+9 6 3
+
+as shown in the sample output.
+
+ Problem -5
+ 2D Array and Sum
+
+Description
+
+You are given an array of n rows and m columns which contains positive integers and sum s
+
+You need to find occurrences of the sum of three consecutive numbers (i.e x,y, and z ) whose sum is equal to s appear horizontally, vertically and diagonally in the given matrix.
+
+Image
+
+Input
+
+Input Format
+
+First line: Three integers n, m and s, where n denotes the number of rows, m denotes the number of columns in the matrix and s is the sum.
+
+Next n lines: Each line contains m characters which contain positive integers only.
+
+Constraints
+
+1 <= n,m < 10
+
+1 <= s <= 50
+
+Output
+
+Print the number of times the sum s appear in the matrix.
+
+Sample Input 1
+
+3 3 6
+3 2 1
+2 2 2
+1 5 1
+
+Sample Output 1
+
+4
+
+Hint
+
+Sample 1 Explanation
+
+here s is 6 presents 4 times( 2 Horizontal + 1 Vertical + 1 Diagonal)
+
+    
+ Problem -6
+2D Array and Phrase
+
+Description
+
+You are given an array of n rows and m columns which contains lower case English letters. How many times does the phrase "saba" appear horizontally, vertically, and diagonally in the grid?
+
+OJ2.png
+
+Input
+
+Input Format
+
+First line: Two integer n and m, where n denotes the number of rows and m denotes the number of columns in the grid
+
+Next n lines: Each line contains m characters which contains lower-case English letters only
+
+Constraints
+
+1 <= n,m <= 100
+
+Output
+
+Output Format
+
+Print the number of times the word “saba” appears in the grid.
+
+Sample Input 1
+
+5 5
+safer
+amjad
+babol
+aaron
+songs
+
+Sample Output 1
+
+2
+
