@@ -1,6 +1,7 @@
 /*
 Problem -4
 Birthday Chocolates Shopping
+
 Description
 Your birthday is coming, and to celebrate it, you want to give chocolates to all the students of your class. There are M students in your class,
 and you have N rupees to spend on the chocolates. Now, you can buy  "Dairy Milk", "Shots" or "Eclairs". The cost of Dairy Milk is 5 Rs per chocolate,
@@ -11,11 +12,12 @@ Print "Dairy Milk", if you can buy M of them within N rupees, else if you can bu
 within N rupees, print "Eclairs", else print "No Chocolates".
 
 Input
-
 The first line of input contains N, the amount of money you have. Next line contains M, the number of students in your class.
+
 Constraints
 1 <= N <= 200
 1 <= M <= 100
+
 Output
 Print "Dairy Milk", if you can afford M of them within N rupees, else if you can buy M Shots within N rupees, print "Shots", 
 else if you can buy M eclairs within N rupees, print "Eclairs", else print "No Chocolates".
@@ -25,11 +27,13 @@ Sample Input 1
 15
 Sample Output 1
 Dairy Milk
+
 Sample Input 2
 10
 15
 Sample Output 2
 No Chocolates
+
 Hint
 In the first sample test cases, you can buy 15 Dairy Milk chocolates, in 75 rupees, and you have 100 rupees to spend, so the answer will be "Dairy Milk".
 In the second test case, you cannot buy any of the chocolates in the required quantity of 15, so the output is "No Chocolates"
