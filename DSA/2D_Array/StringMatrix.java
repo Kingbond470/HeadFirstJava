@@ -1,19 +1,19 @@
 /*
-  String & Matrix
+String & Matrix
 
 Description
 
-You are given a matrix of characters. The matrix has N rows and M columns. Given a string s, you have to tell if it is possible to generate that string from the given matrix.
+You are given a matrix of characters. The matrix has N rows and M columns. Given a string s, you have to tell
+if it is possible to generate that string from the given matrix.
 
 Rules for generating string from the matrix are:
 
-1. You have to pick the first character of string from row 1, the second character from row 2 and so on. The (N+1)th character of the string is to be picked from row 1, that is, you can traverse the rows in a cyclic manner (row 1 comes after row N).
+1. You have to pick the first character of string from row 1, the second character from row 2 and so on.
+The (N+1)th character of the string is to be picked from row 1, that is, you can traverse the rows in a cyclic manner (row 1 comes after row N).
 
 2. If an occurrence of a character is picked from a row, you cannot pick the same occurrence again from that row.
 
 You have to print Yes if a given string can be generated from the matrix using the given rules, else print No.
-
-Input
 
 Input Format
 
@@ -38,6 +38,7 @@ Length of string < N*M
 The matrix consists of lowercase English characters.
 
 String s consists of lowercase English characters.
+
 
 Output
 
@@ -118,65 +119,33 @@ class Main {
 import java.util.*;
 
 class Main {
-
   public static void main(String[] args) {
-
     Scanner sc = new Scanner(System.in);
-
     int testcase = sc.nextInt();
-
     for(int t=0; t<testcase; t++) {
-
       int n = sc.nextInt(), m = sc.nextInt();
-
       String[] ar = new String[n];
-
       sc.nextLine();
-
       for(int i=0; i<n; i++) {
-
         ar[i] = sc.nextLine();
-
       }
-
       String str = sc.nextLine();
-
       boolean b = true;
-
       for(int i=0; i<str.length(); i++) {
-
         String temp = "", toCompare = "";
-
         toCompare += ar[i%n];
-
         temp += str.charAt(i);
-
         //System.out.println(temp+" "+toCompare);
-
         if(toCompare.contains(temp)) {
-
           toCompare = toCompare.replaceFirst(temp,"0");
-
           ar[i%n] = toCompare;
-
         }
-
         else {
-
           b = false;
-
           break;
-
         }
-
       }
-
-      
-
       System.out.println(b?"Yes":"No");
-
     }
-
   }
-
 }
