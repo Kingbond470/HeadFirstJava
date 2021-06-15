@@ -1,19 +1,24 @@
 /*
 Problem -9
 Smaller than largest element
+
 Description
 You are given an array A of size N.
 You need to change all elements smaller than the largest element in the array to -1, and print array
+
 Input
 First line contains T, no of test cases.
 First line of each test case contains N, size of array
 Second line of each test case contains N spaced integers of array A.
+
 Constraints
 1 <= T <= 10
 1 <= N <= 100
 1 <= A[i] <= 1000
+
 Output
 Print the array in new line for each test case
+
 Sample Input 1
 2
 3
@@ -23,11 +28,13 @@ Sample Input 1
 Sample Output 1
 -1 3 -1 
 3 3 -1 -1 -1
+
 Hint
 For test case 1.
 Maximum element is 3.
 All elements less than 3 are converted to -1.
 */
+
 import java.util.Scanner;
 public class SmallerthanLargestelement {
     public static void main(String[] args) {
