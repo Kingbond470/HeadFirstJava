@@ -1,4 +1,3 @@
-
 /*
 Problem-8
 Greater than smallest element
@@ -11,6 +10,7 @@ Input
 First line contains T, no of test cases.
 First line of each test case contains N, size of array
 Second line of each test case contains N spaced integers of array A.
+
 Constraints
 1 <= T <= 10
 1 <= N <= 100
