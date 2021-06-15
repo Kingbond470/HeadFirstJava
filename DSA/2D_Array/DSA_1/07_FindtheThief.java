@@ -1,6 +1,7 @@
 /*
 Problem -7
 Find the Thief
+
 Description
 Recently, a robbery happened at the Royal Bank of Masai. The thief, transferred an amount N into his own account.
 The manager has a doubt on three individuals, Person A, Person B, and Person C. You have the account balance of these three individuals.
