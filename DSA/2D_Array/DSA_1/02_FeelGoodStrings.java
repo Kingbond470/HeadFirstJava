@@ -1,13 +1,20 @@
 /*
 Problem-2
 Feel Good Strings
+
 Description
-Tom loves vowels. Any string which have half of the characters vowels make him feel good. You are given a string of length N, where N is an even number. If the number of vowels in the string, are more than or equal to N/2, print "Feel good!", else print "Feel bad!". (All the letters in the string are in lower case).
+Tom loves vowels. Any string which have half of the characters vowels make him feel good. You are given a string of length N,
+where N is an even number. If the number of vowels in the string, are more than or equal to N/2, print "Feel good!", else print "Feel bad!".
+(All the letters in the string are in lower case).
+
 Note : The letters a, e, i, o, and u are said to be vowels.
+
 Input
 The first line of the input contains N, the length of the string. The next line contains a string of size N.
+
 Constraints
 1 <= N <= 50
+
 Output
 Print "Feel good!", if the number of vowels in the string is more than or equal to N/2, else print "Feel bad!".
 
