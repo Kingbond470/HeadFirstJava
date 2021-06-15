@@ -32,6 +32,7 @@ So, the output is 4 since 1 is odd.
 */
 
 import java.util.Scanner;
+
 public class LongestRepeatedOdd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
