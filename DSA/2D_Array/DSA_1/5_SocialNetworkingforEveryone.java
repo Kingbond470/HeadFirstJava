@@ -1,6 +1,7 @@
 /*
 Problem -5
 Social Networking for Everyone
+
 Description
 You are designing a social networking website that makes everyone make friends in their neighborhood. But, the distance within which
 people can make friends depends on their age. If a person is of age less than 13, they can make friends within 1 Kms of their area,
@@ -22,10 +23,12 @@ Sample Input 1
 15
 Sample Output 1
 5 Kms
+
 Sample Input 2
 30
 Sample Output 2
 You can have friends from anywhere
+
 Hint
 In the first sample test case, the age of the person is 15, therefore, the output  is "5 Kms".
 In the sample test case, the age of the person is 30, therefore, the output is "You can have friends from anywhere".
