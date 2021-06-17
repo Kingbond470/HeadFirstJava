@@ -41,7 +41,58 @@ Sample Output 1
 10
 */
 
-//code from GFG
+//My Approach----------
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SuchSixNums {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        for(int i=0; i<n; i++) {
+            ar[i] = sc.nextInt();
+        }
+        // equation --> ((a*b+c)/d)-e=f
+        // simplified equation --> a*b+c = (f+e)*d (OR) a*b+c = d*(f+e)
+        /*
+        a*b+c ==> 10*7+5 ==> = 75
+        (f+e)*d ==> (10+5)*5 ==> 75
+         */
+        int count = 0;
+        int idx = 0;
+        int[] LHS = new int[n*n*n];
+        int[] RHS = new int[n*n*n];
+        for(int i=0; i<n; i++) {
+            for(int j=0; j<n; j++) {
+                for (int k = 0; k < n; k++) {
+                    LHS[idx++] = ar[i]*ar[j]+ar[k];
+                }
+            }
+        }
+        idx = 0;
+        for(int i=0; i<n; i++) {
+            if(ar[i]!=0) {
+                for(int j=0; j<n; j++) {
+                    for(int k=0; k<n; k++) {
+                        RHS[idx++] = (ar[j]+ar[k])*ar[i];
+                    }
+                }
+            }
+        }
+        Arrays.sort(LHS);
+        for(int i=0; i<RHS.length; i++) {
+            for(int j=0; j<LHS.length; j++) {
+                if(RHS[i] == LHS[j]) count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+
+
+//code from GFG---------
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -126,6 +177,7 @@ public class SuchSixNums2 {
 
 
 }
+
 
 
 /*
