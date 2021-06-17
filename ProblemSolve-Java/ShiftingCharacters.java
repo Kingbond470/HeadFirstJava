@@ -40,7 +40,6 @@ public class ShiftingCharacters {
         }
         System.out.println(str);
 
-
         //Method 2-----
 //        for(int i=0;i<st.length();i++){
 //            char s= (char) (st.charAt(i));
