@@ -11,6 +11,7 @@ public class Main {
         //System.out.println(b.replaceAll("\\s",""));   removes all the whitespaces within the string
         // a = a.replaceAll("\\s","");
         // b = b.replaceAll("\\s","");
+        
         for(int i=0; i<a.length(); i++) {
             if(a.charAt(i) != ' ') {
                  first = first + a.charAt(i);   
