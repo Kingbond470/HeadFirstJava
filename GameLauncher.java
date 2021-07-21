@@ -20,6 +20,7 @@ class GuessGame {
 		int targetNumber = (int)(Math.random() * 100);
 		System.out.println("I'm thinking of a number between 0 and 999...");
 		
+		
 		while(true) {
 			System.out.println("Number to guess is " + targetNumber);
 			
