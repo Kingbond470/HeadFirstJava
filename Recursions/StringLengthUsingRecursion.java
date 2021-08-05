@@ -1,9 +1,14 @@
+/*
+Given a string return the length of the given String without using length built-in function
+
+*/
+
+//using try catch
 import java.util.*;
 public class StringLengthUsingRecursion {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        System.out.println("Hello World!");
         //String str = "rohit sharma";
         int count = 0;
         System.out.println(len(str, count));
@@ -23,6 +28,31 @@ public class StringLengthUsingRecursion {
 
     }
 }
+
+
+//using empty String
+import java.util.Scanner;
+
+public class StringLengthUsingRecursion_emptyString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String st = "";
+        int count = 0;
+        System.out.println(len(str, st, count));
+    }
+
+    private static int len(String str, String st, int count) {
+        if(str.equals(st)) {
+            return count;
+        }
+        else {
+            st+=str.charAt(count);
+            return len(str, st,count+1);
+        }
+    }
+}
+
 
 /*
 
