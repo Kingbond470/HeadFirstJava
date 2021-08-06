@@ -5,6 +5,7 @@ Description
 
 You are given   N  integers, your task is to count group of six such numbers among those   N  integers which follow this equation:
 
+(a*b+c)/d - e = f
 
 Image
 
@@ -38,7 +39,148 @@ Sample Input 1
 Sample Output 1
 
 10
+*/
 
+//My Approach----------
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SuchSixNums {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        for(int i=0; i<n; i++) {
+            ar[i] = sc.nextInt();
+        }
+        // equation --> ((a*b+c)/d)-e=f
+        // simplified equation --> a*b+c = (f+e)*d (OR) a*b+c = d*(f+e)
+        /*
+        a*b+c ==> 10*7+5 ==> = 75
+        (f+e)*d ==> (10+5)*5 ==> 75
+         */
+        int count = 0;
+        int idx = 0;
+        int[] LHS = new int[n*n*n];
+        int[] RHS = new int[n*n*n];
+        for(int i=0; i<n; i++) {
+            for(int j=0; j<n; j++) {
+                for (int k = 0; k < n; k++) {
+                    LHS[idx++] = ar[i]*ar[j]+ar[k];
+                }
+            }
+        }
+        idx = 0;
+        for(int i=0; i<n; i++) {
+            if(ar[i]!=0) {
+                for(int j=0; j<n; j++) {
+                    for(int k=0; k<n; k++) {
+                        RHS[idx++] = (ar[j]+ar[k])*ar[i];
+                    }
+                }
+            }
+        }
+        Arrays.sort(LHS);
+        for(int i=0; i<RHS.length; i++) {
+            for(int j=0; j<LHS.length; j++) {
+                if(RHS[i] == LHS[j]) count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+
+
+//code from GFG---------
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SuchSixNums2 {
+
+    public static void main(String[] args) {
+//        int[] arr = {5, 7, 10};
+//        int n = arr.length;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        for(int i=0; i<n; i++) {
+            ar[i] = sc.nextInt();
+        }
+        System.out.println(sixNums(ar));
+    }
+
+
+    public static int sixNums(int[] ar)
+    {
+        // Generating possible values of RHS of the equation
+        int n = ar.length;
+        int index = 0;
+        int[] RHS = new int[n * n * n + 1];
+        for (int i = 0; i < n; i++) {
+            if (ar[i] != 0) { // Checking d should be non-zero.
+                for (int j = 0; j < n; j++) {
+                    for (int k = 0; k < n; k++) {
+                        RHS[index++] = ar[i] * (ar[j] + ar[k]);
+                    }
+                }
+            }
+        }
+
+        // Sort RHS[] so that we can do binary search in it.
+        Arrays.sort(RHS);
+
+        // Generating all possible values of LHS of the equation
+        // and finding the number of occurrences of the value in RHS.
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < n; k++) {
+                    int val = ar[i] * ar[j] + ar[k];
+                    result += (upper_bound(RHS, val)-lower_bound(RHS, val));//(RHS, index, val)
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static int upper_bound(int[] array, int value) {
+        int low = 0;
+        int high = array.length;
+        while (low < high) {
+            //final int mid = (low + high) / 2;
+            int mid = (low + high)>>1;
+            if (value >= array[mid]) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        return low;
+    }
+
+    public static int lower_bound(int[] array, int value) {
+        int low = 0;
+        int high = array.length;
+        while (low < high) {
+            //final int mid = (low + high) / 2;
+            int mid = (low + high)>>1;
+            if (value <= array[mid]) {
+                high = mid;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
+    }
+
+
+}
+
+
+
+/*
 Problem -2
 Minimum Array Update Required
 
